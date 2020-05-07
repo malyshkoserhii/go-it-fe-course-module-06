@@ -92,6 +92,10 @@ button {
   text-transform: uppercase;
 }
 
+.menu-list-item-link:hover {
+  color: rgb(243, 129, 129);
+}
+
 .menu-list-item-link::after {
   content: "";
   display: block;
@@ -100,7 +104,6 @@ button {
   background-color: rgb(243, 129, 129);
   visibility: hidden;
   opacity: 0;
-
   transition-property: opacity, width;
   transition-duration: 200ms;
   transition-timing-function: linear;
@@ -276,15 +279,19 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  position: relative;
 }
 
 .team-member-photo-wrapper {
   position: relative;
-  box-shadow: 10 10 0 0 rgb(149, 225, 211);
 }
 
 .overlay {
-  background-image: linear-gradient(0deg, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%);
+  background-image: linear-gradient(
+    0deg,
+    rgba(252, 227, 138, 0.9) 0%,
+    rgba(243, 129, 129, 0.9) 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -295,14 +302,15 @@ button {
   left: 0;
   visibility: hidden;
   opacity: 0;
-  transition-property: opacity, box-shadow;
-  transition-timing-function: linear;
-  transition-duration: 200ms;
 }
 
 .team-member-photo-wrapper:hover .overlay {
   visibility: visible;
   opacity: 1;
+  transform: translate(-10px, -10px);
+  transition-property: all;
+  transition-timing-function: linear;
+  transition-duration: 200ms;
   box-shadow: 10px 10px 0px rgb(149, 225, 211);
 }
 
