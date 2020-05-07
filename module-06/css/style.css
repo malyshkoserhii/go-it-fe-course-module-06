@@ -118,7 +118,6 @@ button {
   transition-property: opacity, width;
   transition-duration: 200ms;
   transition-timing-function: linear;
-  transition-delay: 0.5s;
 }
 
 .menu-list-item-link:hover::after {
@@ -298,20 +297,87 @@ button {
   justify-content: space-between;
 }
 
+.team-member-photo-wrapper {
+  position: relative;
+  box-shadow: 10 10 0 0 rgb(149, 225, 211);
+}
+
 /* START OVERLAY */
 
 .overlay {
-  background-image: linear-gradient(90deg,
-      rgb(252, 227, 138) 0%,
-      rgb(253, 94, 94) 100%);
-  background-image: linear-gradient(90deg,
-      rgb(252, 227, 138) 0%,
-      rgb(243, 129, 129) 100%);
-  background-image: linear-gradient(90deg,
-      rgb(252, 227, 138) 0%,
-      rgb(243, 129, 129) 100%);
+  background-image: linear-gradient(0deg, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 380px;
   height: 470px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition-property: opacity, box-shadow;
+  transition-timing-function: linear;
+  transition-duration: 200ms;
+}
+
+.team-member-photo-wrapper:hover .overlay {
+  visibility: visible;
+  opacity: 1;
+  box-shadow: 10px 10px 0px rgb(149, 225, 211);
+}
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  min-width: 224px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.social-network-item {
+  background-color: rgb(252, 227, 138);
+  transition-property: background-color;
+  transition-timing-function: linear;
+  transition-duration: 200ms;
+}
+
+.social-network-item:not(:last-of-type) {
+  margin-right: 1px;
+}
+
+
+.social-network-item:hover {
+  background-color: rgb(127, 217, 199);
+}
+
+.social-network-link {
+  width: 56px;
+  height: 56px;
+}
+
+.facebook {
+  background-image: url("../img/socials/facebook.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.twitter {
+  background-image: url("../img/socials/twitter.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.pinterest {
+  background-image: url("../img/socials/pinterest.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.instagram {
+  background-image: url("../img/socials/instagram.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* END OVERLEY  */
