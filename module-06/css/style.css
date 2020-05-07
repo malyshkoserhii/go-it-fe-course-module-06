@@ -10,7 +10,6 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
 }
 
 main {
@@ -47,28 +46,17 @@ button {
 }
 
 .visually-hidden {
-  /* Удаляем элемент из потока документа */
   position: absolute;
-  /* Временное решение для неверно произносимого, размазанного текста */
   white-space: nowrap;
-  /* Устанавливаем минимально возможный размер (некоторые скринридеры игнорируют элементы с нулевой высотой и шириной) */
   width: 1px;
   height: 1px;
-  /* Скрываем вылезающий за границы контент */
   overflow: hidden;
-  /* Сбрасываем любые свойства, которые могут повлиять на размер элемента */
   border: 0;
   padding: 0;
-  /* Вырезаем ту часть контента, которая должна отображаться. */
-  /* Устаревшее свойство clip для старых браузеров */
   clip: rect(0 0 0 0);
-  /* clip-path для новых браузеров. inset(50%) определяет область вставки, которая позволит контенту исчезнуть.  */
   clip-path: inset(50%);
-  /* Похоже, никто до конца не понимает, почему тут margin: -1px. Кроме того, это приводит к проблемам (читай: https://github.com/h5bp/html5-boilerplate/issues/1985). */
   margin: -1px;
 }
-
-/* HEADER */
 
 .page-header {
   padding-bottom: 126px;
@@ -86,7 +74,6 @@ button {
   font-size: 30px;
   font-weight: 700;
   color: #7fd9c7;
-  /* line-height: 34.5px; according to normalize.css */
 }
 
 .menu-list {
@@ -103,7 +90,6 @@ button {
   font-weight: 400;
   color: #7fd9c7;
   text-transform: uppercase;
-  /* line-height: 16.1px; according to normalize.css */
 }
 
 .menu-list-item-link::after {
@@ -120,15 +106,13 @@ button {
   transition-timing-function: linear;
 }
 
-.menu-list-item-link:hover::after {
+.menu-list-item-link:hover::after,
+.menu-list-item-link:focus::after {
   visibility: visible;
   opacity: 1;
   width: 100%;
 }
 
-/* MAIN */
-/* ARTICLE  */
-/* SECTION SERVICES  */
 .services {
   padding-bottom: 92px;
 }
@@ -155,7 +139,6 @@ button {
   font-size: 24px;
   margin-bottom: 18px;
   color: rgb(51, 51, 51);
-  /* line-height: 27.6px; according to normalize.css */
 }
 
 .main-title-bold {
@@ -164,7 +147,6 @@ button {
   font-weight: 700;
   color: rgb(51, 51, 51);
   text-transform: uppercase;
-  /* line-height: 34.5px; according to normalize.css */
 }
 
 .services-list {
@@ -286,7 +268,6 @@ button {
   top: 0px;
 }
 
-/* SECTION TEAM */
 .team {
   padding-bottom: 81px;
 }
@@ -302,15 +283,13 @@ button {
   box-shadow: 10 10 0 0 rgb(149, 225, 211);
 }
 
-/* START OVERLAY */
-
 .overlay {
   background-image: linear-gradient(0deg, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 380px;
-  height: 470px;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -346,7 +325,6 @@ button {
   margin-right: 1px;
 }
 
-
 .social-network-item:hover {
   background-color: rgb(127, 217, 199);
 }
@@ -380,8 +358,6 @@ button {
   background-position: center;
 }
 
-/* END OVERLEY  */
-
 .team-member-name {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   font-size: 14px;
@@ -403,14 +379,11 @@ button {
   margin: 0px;
 }
 
-/* FOOTER */
 .page-footer::before {
-  /* display: block; */
   content: " ";
   width: 100%;
   height: 1px;
   background-color: rgb(229, 229, 229);
-  margin-bottom: 11px;
 }
 
 .page-footer {
@@ -449,6 +422,7 @@ button {
   width: 234px;
   height: 40px;
   box-sizing: border-box;
+  padding: 15px;
 }
 
 .contact-form__input::placeholder {
@@ -457,7 +431,7 @@ button {
   font-weight: 300;
   font-style: italic;
   line-height: 24px;
-  padding: 15px;
+  padding: 0px;
 }
 
 .contact-form__btn {
