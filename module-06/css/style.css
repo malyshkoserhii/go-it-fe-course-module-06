@@ -287,11 +287,9 @@ button {
 }
 
 .overlay {
-  background-image: linear-gradient(
-    0deg,
-    rgba(252, 227, 138, 0.9) 0%,
-    rgba(243, 129, 129, 0.9) 100%
-  );
+  background-image: linear-gradient(0deg,
+      rgba(252, 227, 138, 0.9) 0%,
+      rgba(243, 129, 129, 0.9) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -307,12 +305,20 @@ button {
 .team-member-photo-wrapper:hover .overlay {
   visibility: visible;
   opacity: 1;
+  transition-property: all;
+  transition-timing-function: linear;
+  transition-duration: 200ms;
+}
+
+.team-member-photo-wrapper:hover {
   transform: translate(-10px, -10px);
   transition-property: all;
   transition-timing-function: linear;
   transition-duration: 200ms;
   box-shadow: 10px 10px 0px rgb(149, 225, 211);
 }
+
+
 
 .social {
   display: flex;
