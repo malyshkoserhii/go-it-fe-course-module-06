@@ -282,6 +282,10 @@ button {
   position: relative;
 }
 
+.team-member-card {
+  flex-basis: 380px;
+}
+
 .team-member-photo-wrapper {
   position: relative;
 }
@@ -298,9 +302,11 @@ button {
 }
 
 .overlay {
-  background-image: linear-gradient(0deg,
-      rgba(252, 227, 138, 0.9) 0%,
-      rgba(243, 129, 129, 0.9) 100%);
+  background-image: linear-gradient(
+    0deg,
+    rgba(252, 227, 138, 0.9) 0%,
+    rgba(243, 129, 129, 0.9) 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -326,7 +332,6 @@ button {
   transition-property: all;
   transition-timing-function: linear;
   transition-duration: 200ms;
-
 }
 
 .team-member-photo-wrapper:hover {
@@ -395,7 +400,6 @@ button {
   text-transform: uppercase;
   text-align: center;
   margin: 30px 0px 10px;
-  /* line-height: 16.1px; according to normalize.css */
 }
 
 .team-member-position {
@@ -462,6 +466,7 @@ button {
   font-style: italic;
   line-height: 24px;
   padding: 0px;
+  color: rgb(204, 204, 204);
 }
 
 .contact-form__btn {
